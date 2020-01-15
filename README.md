@@ -42,19 +42,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|image_id|integer|foreign_key: true|
+|image|string||
 
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_one :image
-
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|message_id|integer|null: false, foreign_key: true|
-
-### Association
-- has_one :chat
