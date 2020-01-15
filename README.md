@@ -9,7 +9,8 @@
 |chat_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to :group, through: :groups_users
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 - has_many :chats
 
 
@@ -21,7 +22,8 @@
 |chat_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to :user, through: :groups_users
+- has_many :users, through: :groups_users
+- has_many :groups_users
 - has_many :chats
 
 
