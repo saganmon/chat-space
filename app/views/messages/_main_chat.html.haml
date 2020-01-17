@@ -1,0 +1,42 @@
+.main-chat
+  .main-chat__group--info
+    .group-items
+      .group-items__group
+        .group-items__group--group
+          test
+        .group-items__group--member
+          %ul
+            Member:
+          %li
+            masa
+          %li
+            haru
+      .group-items__edit
+        = link_to "Edit", "#"
+
+  .main-chat__message--list
+    .main-items
+      .main-items__user
+        .main-items__user--name
+          masa
+        .main-items__user--time
+          2020/01/16 17:00
+      .main-items__comment
+        おはよう！
+
+      .main-items__user
+        .main-items__user--name
+          haru
+        .main-items__user--time
+          2020/01/16 18:00
+      .main-items__comment
+        こんにちは！
+
+  .main-chat__message--form
+    .new-message
+      %form.new-message__items
+        %input.new-message__items--input{type: "text", placeholder: "type a message"}
+        %label{class: "new-message__items--icon"}
+          = icon('fas', 'image')
+          %input.new-message__items--image{type: "file"}
+      %input.new-message__btn{type: "submit", value: "Send"}

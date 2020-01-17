@@ -1,0 +1,25 @@
+.side-bar
+  .side-bar__user--name
+    .top-items
+      .top-items__name
+        masa
+      .top-items__icons
+        .top-items__icons--new
+        = link_to "#" do
+          = icon('fas', 'edit', class: "top-items__btn--new")
+
+        .top-items__icons--edit
+        = link_to "#" do
+          = icon('fas', 'cog', class: "top-items__btn--edit")
+
+  .side-bar__group--list
+    .dijest-items__group
+      .dijest-items__group--name
+        techcamp
+      .dijest-items__group--message
+        まだメッセージがありません
+    .dijest-items__group
+      .dijest-items__group--name
+        techcamp2
+      .dijest-items__group--message
+        まだメッセージがありません
