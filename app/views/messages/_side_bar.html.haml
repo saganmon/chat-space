@@ -2,14 +2,14 @@
   .side-bar__user--name
     .top-items
       .top-items__name
-        masa
+        = current_user.name
       .top-items__icons
         .top-items__icons--new
         = link_to "#" do
           = icon('fas', 'edit', class: "top-items__btn--new")
 
         .top-items__icons--edit
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: "top-items__btn--edit")
 
   .side-bar__group--list
