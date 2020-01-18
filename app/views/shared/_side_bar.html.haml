@@ -1,16 +1,14 @@
 .side-bar
   .side-bar__user--name
     .top-items
-      .top-items__name
+      .top-items__text
         = current_user.name
       .top-items__icons
-        .top-items__icons--new
+        .top-items__icons__btn
         = link_to new_group_path do
-          = icon('fas', 'edit', class: "top-items__btn--new")
-
-        .top-items__icons--edit
+          = icon('fas', 'edit', class: "top-items__icons__btn--new")
         = link_to edit_user_path(current_user.id) do
-          = icon('fas', 'cog', class: "top-items__btn--edit")
+          = icon('fas', 'cog', class: "top-items__icons__btn--edit")
 
   .side-bar__group--list
     - current_user.groups.each do |group|
