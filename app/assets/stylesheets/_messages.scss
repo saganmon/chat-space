@@ -88,13 +88,16 @@
       width: 100%;
       background-color: #ffffff;
       border: 1px solid #eeeeee;
+      position: fixed;
     }
   }
   &__message {
     &--list {
-      height: calc(100% - 190px);
+      // height: calc(100% - 190px);
+      height: calc(100% - 90px);
       width: 100%;
       background-color: #fafafa;
+      padding-top: 100px;
     }
     &--form {
       height: 90px;
@@ -116,17 +119,11 @@
       margin-top: 35px;
     }
     &--member {
-      display: flex;
       font-size: 12px;
       color: #999999;
       margin-top: 15px;
-      list-style: none;
-      ul {
-        display: flex;
-      }
-      li {
-        padding-left: 5px;
-      }
+      margin-left: 5px;
+      display: flex;
     }
   }
   &__btn {
@@ -157,30 +154,37 @@
     &--time {
       font-size: 12px;
       color: #999999;
+      margin-left: 5px;
     }
   }
   &__body {
-    margin-bottom: 46px;
-    font-size: 14px;
-    color: #434a54;
+    &--message {
+      margin-bottom: 46px;
+      font-size: 14px;
+      color: #434a54;
+    }
   }
 }
 
 .new-message {
+  height: 100%;
   width: 100%;
-  padding: 10px 40px 10px 50px;
   display: flex;
   &__text {
-      font-size: 16px;
-      height: 50px;
-      width: 100%;
-      color: #434a54;
-      border-style: none;
+    padding-left: 10px;
+    // padding: 10px 40px 10px 50px;
+    font-size: 16px;
+    height: 50px;
+    width: 1350px;
+    color: #434a54;
+    border-style: none;
   }
   &__file {
+    height: 100%;
+    width: 100px;
+    padding: 0px 10px;
+    display: flex;
     &__picture {
-      padding: 0px 10px;
-      display: flex;
       position: relative;
       &--icon {
         position: absolute;
