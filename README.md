@@ -38,10 +38,10 @@
 - belongs_to :user
 
 
-## chatsテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
+|content|text||
 |image|string||
 
 ### Association

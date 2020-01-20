@@ -1,0 +1,11 @@
+.main-items
+  .main-items__title
+    .main-items__title--name
+      = message.user.name
+    .main-items__title--time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-items__body
+  - if message.content.present?
+    %p.main-items__body--message
+      = message.content
+  = image_tag message.image.url, class: 'main-items__body--image' if message.image.present?
