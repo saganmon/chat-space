@@ -1,2 +1,26 @@
-.messages
-  = render @messages
+-if @group.present?
+  .main-chat
+    .main-chat__group--info
+      .group-items
+        .group-items__text
+          .group-items__text--group
+            #{@group.name}
+          .group-items__text--member
+            Member:
+            = @group.users.each do |g|
+              #{g.name}
+        .group-items__btn
+          = link_to edit_group_path(@group) do
+            = "Edit"
+
+    .main-chat__message--list
+      = render @messages
+
+    .new-message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
+        .new-message__file
+          = f.label :image, class: 'new-message__file__picture' do
+            = icon('fas', 'image', class: 'new-message__file__picture--icon')
+            = f.file_field :image, class: 'new-message__file__picture--hidden'
+        = f.submit 'Send', class: 'new-message__send'
