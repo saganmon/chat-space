@@ -16,11 +16,12 @@
     .main-chat__message--list
       = render @messages
 
-    .new-message
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
-        .new-message__file
-          = f.label :image, class: 'new-message__file__picture' do
-            = icon('fas', 'image', class: 'new-message__file__picture--icon')
-            = f.file_field :image, class: 'new-message__file__picture--hidden'
-        = f.submit 'Send', class: 'new-message__send'
+    .main-chat__message--form
+      .new-message
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
+          .new-message__file
+            = f.label :image, class: 'new-message__file__picture' do
+              = icon('fas', 'image', class: 'new-message__file__picture--icon')
+              = f.file_field :image, class: 'new-message__file__picture--hidden'
+          = f.submit 'Send', class: 'new-message__send'
