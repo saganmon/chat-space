@@ -4,11 +4,11 @@
       .group-items
         .group-items__text
           .group-items__text--group
-            #{@group.name}
+            = @group.name
           .group-items__text--member
             Member:
-            = @group.users.each do |g|
-              #{g.name}
+            - @group.users.each do |g|
+              = g.name
         .group-items__btn
           = link_to edit_group_path(@group) do
             = "Edit"
