@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'faker', "~> 2.8"
 end
 
 group :development do
@@ -53,7 +54,7 @@ group :development do
 end
 
 group :test do
-  gem 'faker', "~> 2.8"
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
