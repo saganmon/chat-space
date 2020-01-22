@@ -1,5 +1,5 @@
-.side-bar
-  .side-bar__user--name
+.side
+  .side__top
     .top-items
       .top-items__text
         = current_user.name
@@ -10,11 +10,11 @@
         = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: "top-items__icons__btn--edit")
 
-  .side-bar__group--list
+  .side__middle
     - current_user.groups.each do |group|
-      .dijest-items__group
+      .side-items__group
         = link_to group_messages_path(group) do
-          .dijest-items__group--name
+          .side-items__group--name
             = group.name
-          .dijest-items__group--message
+          .side-items__group--message
             = group.show_last_message
