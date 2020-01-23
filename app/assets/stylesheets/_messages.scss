@@ -6,24 +6,45 @@
   display: flex;
 }
 
-.side-bar {
+.side {
   height: 100vh;
   width: 300px;
-  &__user {
-    &--name {
-      height: 100px;
-      width: 100%;
-      background-color: #253141;
-      display: flex;
-      align-items: center;
-    }
+  &__top {
+    height: 100px;
+    width: 300px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
   }
-  &__group {
-    &--list {
-      height: calc(100% - 100px);
-      width: 100%;
-      background-color: #2f3e51;
-    }
+  &__middle {
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-color: #2f3e51;
+  }
+}
+
+.main {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  &__top {
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    position: fixed;
+  }
+  &__middle {
+    height: calc(100% - 90px);
+    width: 100%;
+    background-color: #fafafa;
+    padding-top: 100px;
+    padding-left: 40px;
+  }
+  &__bottom {
+    height: 90px;
+    width: 100%;
+    background-color: #d2d2d2;
+    padding: 20px 40px 20px 50px;
   }
 }
 
@@ -60,59 +81,34 @@
   }
 }
 
-.dijest-items__group {
-  height: 100%;
-  width: 100%;
-  padding: 20px;
-  a {
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  &--name {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  &--message {
-    font-size: 11px;
-    margin-bottom: 40px;
-  }
-}
-
-.main-chat {
-  height: 100vh;
-  width: calc(100vw - 300px);
+.side-items {
   &__group {
-    &--info {
-      height: 100px;
-      width: 100%;
-      background-color: #ffffff;
-      border: 1px solid #eeeeee;
-      position: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
     }
-  }
-  &__message {
-    &--list {
-      // height: calc(100% - 190px);
-      height: calc(100% - 90px);
-      width: 100%;
-      background-color: #fafafa;
-      padding-top: 100px;
+    &--name {
+      font-size: 15px;
+      margin-bottom: 5px;
     }
-    &--form {
-      height: 90px;
-      width: 100%;
-      background-color: #d2d2d2;
-      padding: 20px 40px 20px 50px;
+    &--message {
+      font-size: 11px;
+      margin-bottom: 40px;
     }
   }
 }
 
 .group-items {
+  height: 100%;
+  width: calc(100vw - 300px);
   padding: 0px 40px;
   display: flex;
   justify-content: space-between;
-  &__text {
+  &__contents {
     &--group {
       font-size: 20px;
       color: #333333;
@@ -126,11 +122,10 @@
       display: flex;
     }
   }
-  &__btn {
+  &__edit {
     height: 40px;
     width: 72px;
     margin-top: 28px;
-    margin-right: 40px;
     padding: 10px 20px;
     color: #38aef0;
     font-size: 16px;
@@ -142,7 +137,6 @@
 }
 
 .main-items {
-  padding-left: 40px;
   &__title {
     display: flex;
     margin-top: 35px;
@@ -168,42 +162,46 @@
 
 .new-message {
   height: 100%;
-  width: 100%;
+  width: calc(100vw - 390px);
   display: flex;
-  &__text {
-    padding-left: 10px;
-    // padding: 10px 40px 10px 50px;
-    font-size: 16px;
+  &__field {
     height: 50px;
-    width: 1350px;
-    color: #434a54;
-    border-style: none;
-  }
-  &__file {
-    height: 100%;
-    width: 100px;
-    padding: 0px 10px;
+    width: 100%;
+    position: relative;
     display: flex;
-    &__picture {
-      position: relative;
-      &--icon {
-        position: absolute;
-        top: 15px;
-        left: 1380px;
-        font-size: 20px;
-      }
-      &--hidden {
-        visibility: hidden;
+    &--text {
+      height: 50px;
+      width: 100%;
+      padding: 0 40px 0 10px;
+      color: #434a54;
+      border-style: none;
+      font-size: 16px;
+    }
+    &--image {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      &--file {
       }
     }
   }
-  &__send {
-    width: 100px;
+  &__btn {
     height: 50px;
-    padding: 0 20px;
+    width: 100px;
+    padding: 0 30px;
     margin-left: 15px;
     background-color: #38aef0;
     color: #ffffff;
     font-size: 16px;
+    cursor: pointer;
   }
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.hidden {
+  visibility: hidden;
 }

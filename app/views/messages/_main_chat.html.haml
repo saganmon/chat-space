@@ -1,27 +1,26 @@
 -if @group.present?
-  .main-chat
-    .main-chat__group--info
+  .main
+    .main__top
       .group-items
-        .group-items__text
-          .group-items__text--group
-            #{@group.name}
-          .group-items__text--member
+        .group-items__contents
+          .group-items__contents--group
+            = @group.name
+          .group-items__contents--member
             Member:
-            = @group.users.each do |g|
-              #{g.name}
-        .group-items__btn
+            - @group.users.each do |g|
+              = g.name
+        .group-items__edit
           = link_to edit_group_path(@group) do
             = "Edit"
 
-    .main-chat__message--list
+    .main__middle
       = render @messages
 
-    .main-chat__message--form
-      .new-message
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
-          .new-message__file
-            = f.label :image, class: 'new-message__file__picture' do
-              = icon('fas', 'image', class: 'new-message__file__picture--icon')
-              = f.file_field :image, class: 'new-message__file__picture--hidden'
-          = f.submit 'Send', class: 'new-message__send'
+    .main__bottom
+      = form_for [@group, @message] , html: { class: "new-message" } do |f|
+        .new-message__field
+          = f.text_field :content, class: 'new-message__field--text', placeholder: 'type a message'          
+          = f.label :image, class: 'new-message__field--image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'new-message__btn'
