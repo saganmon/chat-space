@@ -11,8 +11,8 @@
           = icon('fas', 'cog', class: "top-items__icons__btn--edit")
 
   .side__middle
-    - current_user.groups.each do |group|
-      .side-items__group
+    .side-items__group
+      - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
           .side-items__group--name
             = group.name
