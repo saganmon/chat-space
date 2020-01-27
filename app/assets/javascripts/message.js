@@ -89,7 +89,7 @@ $(function() {
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージの読み込みに失敗しました");
     })
   };
 
