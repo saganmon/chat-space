@@ -5,56 +5,56 @@ $(function() {
     // 画像とメッセージがあるとき
     if (message.content && message.image) {
       var html =
-        `<div class="main-items" data-message-id=` + message.id + `>` +
-          `<div class="main-items__title">` +
-            `<div class="main-items__title--name">` +
-              message.user_name +
-            `</div>` +
-            `<div class="main-items__title--time">` +
-              message.created_at +
-            `</div>` +
-          `</div>` +
-          `<div class="main-items__body">` +
-            `<p class="main-items__body--message">` +
-              message.content +
-            `</p>` +
-          `</div>` +
-          `<img src="` + message.image + `" class="main-items__body--image" >` +
-        `</div>`
+        `<div class="main-items" data-message-id=${message.id}>
+          <div class="main-items__title">
+            <div class="main-items__title--name">
+              ${message.user_name}
+            </div>
+            <div class="main-items__title--time">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="main-items__body">
+            <p class="main-items__body--message">
+              ${message.content}
+            </p>
+          </div>
+          <img src="${message.image}" "class=main-items__body--image">
+        </div>`
     } else if (message.content) {
     // メッセージがあるとき（画像なし）
       var html =
-        `<div class="main-items" data-message-id=` + message.id + `>` +
-        `<div class="main-items__title">` +
-          `<div class="main-items__title--name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="main-items__title--time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="main-items__body">` +
-          `<p class="main-items__body--message">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+        `<div class="main-items" data-message-id=${message.id}>
+          <div class="main-items__title">
+            <div class="main-items__title--name">
+              ${message.user_name}
+            </div>
+          <div class="main-items__title--time">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="main-items__body">
+          <p class="main-items__body--message">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
     } else if (message.image) {    
     // 画像があるとき（メッセージなし）
       var html =
-        `<div class="main-items" data-message-id=` + message.id + `>` +
-          `<div class="main-items__title">` +
-            `<div class="main-items__title--name">` +
-              message.user_name +
-            `</div>` +
-            `<div class="main-items__title--time">` +
-              message.created_at +
-            `</div>` +
-          `</div>` +
-          `<div class="main-items__body">` +
-            `<img src="` + message.image + `" class="main-items__body--image" >` +
-          `</div>` +
-        `</div>`
+        `<div class="main-items" data-message-id=${message.id}>
+          <div class="main-items__title">
+            <div class="main-items__title--name">
+              ${message.user_name}
+            </div>
+            <div class="main-items__title--time">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="main-items__body">
+            <img src="${message.image}" class="main-items__body--image">
+          </div>
+        </div>`
     }
     return html;
   };
