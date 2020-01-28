@@ -82,8 +82,8 @@ $(function() {
           insertHTML += buildHTML(message)
         });
         //メッセージが入ったHTMLに、入れ物ごと追加
-        $('.main-items').append(insertHTML);
-        $('.main-items').animate({ scrollTop: $('.main-items')[0].scrollHeight});
+        $('.main__middle').append(insertHTML);
+        $('.main__middle').animate({ scrollTop: $('.main-items')[0].scrollHeight});
         $("#new_message")[0].reset();
         $(".new-message__btn").prop("disabled", false);
       }
